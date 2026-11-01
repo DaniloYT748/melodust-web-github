@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Melodust Web</title>
+<meta name="description" content="Melodust Web — music player in your browser. 8D audio, equalizer, visualizer, synced lyrics.">
+<meta name="theme-color" content="#0b0714">
+<link rel="icon" href="icons/favicon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="bg" aria-hidden="true"></div>
+<div id="app">
+  <aside id="side">
+    <div class="brand"><img src="icons/favicon.png" alt=""><div><b>Melodust</b><small data-i18n="app.tagline">New Era</small></div></div>
+    <nav id="nav"></nav>
+    <div class="side-foot">
+      <button id="btnInstall" class="ghost" hidden></button>
+      <a class="ghost" id="linkDesktop" href="https://xgroupsoftware.xyz" target="_blank" rel="noopener"></a>
+    </div>
+  </aside>
+
+  <main id="main">
+    <header id="topbar">
+      <button id="btnMenu" class="icon only-mobile" aria-label="Menu"></button>
+      <h1 id="viewTitle"></h1>
+      <div class="grow"></div>
+      <div id="topActions"></div>
+    </header>
+    <section id="view" tabindex="-1"></section>
+  </main>
+
+  <footer id="player">
+    <div class="np">
+      <div class="cover" id="npCover"></div>
+      <div class="np-text">
+        <div class="np-title" id="npTitle"></div>
+        <div class="np-artist" id="npArtist"></div>
+      </div>
+      <button class="icon" id="btnFav" aria-label="Favorite"></button>
+    </div>
+    <div class="center">
+      <div class="ctrl">
+        <button class="icon" id="btnShuffle"></button>
+        <button class="icon" id="btnPrev"></button>
+        <button class="play" id="btnPlay"></button>
+        <button class="icon" id="btnNext"></button>
+        <button class="icon" id="btnRepeat"></button>
+      </div>
+      <div class="seek">
+        <span id="tCur">0:00</span>
+        <div class="range" id="seek"><div class="fill"></div><div class="ab" id="abA"></div><div class="ab" id="abB"></div><div class="thumb"></div></div>
+        <span id="tDur">0:00</span>
+      </div>
+    </div>
+    <div class="right">
+      <button class="chip" id="btn8d"><span data-i18n="player.8d">8D Audio</span> <b id="lbl8d"></b></button>
+      <button class="chip" id="btnAB">A–B</button>
+      <button class="icon" id="btnMini"></button>
+      <button class="icon" id="btnMute"></button>
+      <div class="range vol" id="vol"><div class="fill"></div><div class="thumb"></div></div>
+    </div>
+  </footer>
+</div>
+
+<div id="menu" class="menu" hidden></div>
+<div id="dialog" class="dialog" hidden></div>
+<div id="toast" class="toast" hidden></div>
+<div id="drop" class="drop" hidden><div><span data-i18n="lib.empty.sub"></span></div></div>
+
+<input type="file" id="fileFolder" webkitdirectory directory multiple hidden>
+<input type="file" id="fileAudio" accept="audio/*,.mp3,.flac,.ogg,.opus,.wav,.m4a,.aac,.weba,.webm" multiple hidden>
+<input type="file" id="fileLrc" accept=".lrc,.txt" hidden>
+<input type="file" id="fileM3u" accept=".m3u,.m3u8" hidden>
+<input type="file" id="fileBackup" accept=".json" hidden>
+<input type="file" id="filePhoto" accept="image/*" hidden>
+<audio id="audio" preload="auto" crossorigin="anonymous"></audio>
+
+<script src="js/jsmediatags.min.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/i18n-sync.js"></script>
+<script src="js/config.js"></script>
+<script src="js/syncdoc.js"></script>
+<script src="js/core.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/views.js"></script>
+<script src="js/sync.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

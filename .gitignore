@@ -1,0 +1,15 @@
+# secrets and user data — never commit these
+.env
+.env.*
+!.env.example
+server/.env
+server/data/
+*.db.json
+db.json
+
+# dependencies / noise
+node_modules/
+npm-debug.log*
+.DS_Store
+Thumbs.db
+*.log
